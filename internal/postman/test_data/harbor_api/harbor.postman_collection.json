@@ -1,0 +1,485 @@
+{
+	"info": {
+		"_postman_id": "6e5db14e-0765-419a-a47a-241fede72701",
+		"name": "harbor api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "242512",
+		"_collection_link": "https://martian-star-503182.postman.co/workspace/My-Workspace~d6aac28f-4d5b-47d8-876c-795ad0f9f37f/collection/242512-6e5db14e-0765-419a-a47a-241fede72701?action=share&source=collection_link&creator=242512"
+	},
+	"item": [
+		{
+			"name": "/projects",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hub.fif.tech/api/v2.0/projects?page=1&page_size=100",
+					"protocol": "https",
+					"host": [
+						"hub",
+						"fif",
+						"tech"
+					],
+					"path": [
+						"api",
+						"v2.0",
+						"projects"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hub.fif.tech/api/v2.0/projects?page=1&page_size=100",
+							"protocol": "https",
+							"host": [
+								"hub",
+								"fif",
+								"tech"
+							],
+							"path": [
+								"api",
+								"v2.0",
+								"projects"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 24 Oct 2025 01:23:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "link",
+							"value": "</api/v2.0/projects?page=2&page_size=100>; rel=\"next\""
+						},
+						{
+							"key": "vary",
+							"value": "Cookie"
+						},
+						{
+							"key": "x-harbor-csrf-token",
+							"value": "jS+iFTbvgcds35GDjbaaAhkYTBUZ0TuQ5wRSeno7jz9s6mbp3TZ/vYQKEt4f8SxlcAZJbaH3IaZs01i+yCDdnA=="
+						},
+						{
+							"key": "x-request-id",
+							"value": "bc76a917-2d07-4050-a6a6-5498b45cf829"
+						},
+						{
+							"key": "x-total-count",
+							"value": "101"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "frame-ancestors 'none'"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "4615"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9935ab75f9c7fe99-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"chart_count\": 1,\n        \"creation_time\": \"2024-01-08T19:05:15.865Z\",\n        \"current_user_role_id\": 2,\n        \"current_user_role_ids\": [\n            2\n        ],\n        \"cve_allowlist\": {\n            \"creation_time\": \"0001-01-01T00:00:00.000Z\",\n            \"id\": 221,\n            \"items\": [],\n            \"project_id\": 242,\n            \"update_time\": \"0001-01-01T00:00:00.000Z\"\n        },\n        \"metadata\": {\n            \"auto_scan\": \"true\",\n            \"enable_content_trust\": \"false\",\n            \"prevent_vul\": \"false\",\n            \"public\": \"false\",\n            \"reuse_sys_cve_allowlist\": \"true\",\n            \"severity\": \"low\"\n        },\n        \"name\": \"monorepo\",\n        \"owner_id\": 1,\n        \"owner_name\": \"admin\",\n        \"project_id\": 242,\n        \"repo_count\": 1,\n        \"update_time\": \"2024-01-08T19:05:15.865Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/repositories",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hub.fif.tech/api/v2.0/projects/someproject/repositories?page=1&page_size=100",
+					"protocol": "https",
+					"host": [
+						"hub",
+						"fif",
+						"tech"
+					],
+					"path": [
+						"api",
+						"v2.0",
+						"projects",
+						"someproject",
+						"repositories"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hub.fif.tech/api/v2.0/projects/someproject/repositories?page=1&page_size=100",
+							"protocol": "https",
+							"host": [
+								"hub",
+								"fif",
+								"tech"
+							],
+							"path": [
+								"api",
+								"v2.0",
+								"projects",
+								"someproject",
+								"repositories"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 24 Oct 2025 01:26:49 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "link",
+							"value": "</api/v2.0/projects/someproject/repositories?page=2&page_size=100>; rel=\"next\""
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sid=a52f5a4f865a5498a42c524cd3f5d852; Path=/; HttpOnly"
+						},
+						{
+							"key": "x-request-id",
+							"value": "03f1db99-dfc3-411b-8d26-874321fae90e"
+						},
+						{
+							"key": "x-total-count",
+							"value": "320"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "frame-ancestors 'none'"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "361"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9935b02abe15c95b-IAD"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "[\n    {\n        \"artifact_count\": 2,\n        \"creation_time\": \"2025-08-05T14:02:08.152Z\",\n        \"id\": 12763,\n        \"name\": \"some/project\",\n        \"project_id\": 91,\n        \"pull_count\": 0,\n        \"update_time\": \"2025-08-05T14:02:08.152Z\"\n    },\n    {\n        \"artifact_count\": 19,\n        \"creation_time\": \"2025-08-04T22:35:27.573Z\",\n        \"id\": 12752,\n        \"name\": \"another/project\",\n        \"project_id\": 91,\n        \"pull_count\": 17,\n        \"update_time\": \"2025-09-22T19:51:50.477Z\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/artifacts",
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "username",
+							"value": "username",
+							"type": "string"
+						},
+						{
+							"key": "password",
+							"value": "password",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://hub.fif.tech/api/v2.0/projects/someproject/repositories/somerepository/artifacts?page=1&page_size=100",
+					"protocol": "https",
+					"host": [
+						"hub",
+						"fif",
+						"tech"
+					],
+					"path": [
+						"api",
+						"v2.0",
+						"projects",
+						"someproject",
+						"repositories",
+						"somerepository",
+						"artifacts"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "page_size",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "200 OK",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://hub.fif.tech/api/v2.0/projects/someproject/repositories/somerepository/artifacts?page=1&page_size=100",
+							"protocol": "https",
+							"host": [
+								"hub",
+								"fif",
+								"tech"
+							],
+							"path": [
+								"api",
+								"v2.0",
+								"projects",
+								"someproject",
+								"repositories",
+								"somerepository",
+								"artifacts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "page_size",
+									"value": "100"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Fri, 24 Oct 2025 01:31:40 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "br"
+						},
+						{
+							"key": "Set-Cookie",
+							"value": "sid=0c07288fb3a36f32caaa638b7de2bcb4; Path=/; HttpOnly"
+						},
+						{
+							"key": "x-request-id",
+							"value": "48814658-8b89-4f0d-96bd-4b7e44835254"
+						},
+						{
+							"key": "x-total-count",
+							"value": "36"
+						},
+						{
+							"key": "x-frame-options",
+							"value": "DENY"
+						},
+						{
+							"key": "content-security-policy",
+							"value": "frame-ancestors 'none'"
+						},
+						{
+							"key": "x-envoy-upstream-service-time",
+							"value": "553"
+						},
+						{
+							"key": "cf-cache-status",
+							"value": "DYNAMIC"
+						},
+						{
+							"key": "Strict-Transport-Security",
+							"value": "max-age=15552000; includeSubDomains"
+						},
+						{
+							"key": "Server",
+							"value": "cloudflare"
+						},
+						{
+							"key": "CF-RAY",
+							"value": "9935b7490862198a-IAD"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"addition_links\": {\n            \"build_history\": {\n                \"absolute\": false,\n                \"href\": \"/api/v2.0/projects/someproject/repositories/somerepository/artifacts/sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755/additions/build_history\"\n            }\n        },\n        \"digest\": \"sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755\",\n        \"extra_attrs\": {\n            \"architecture\": \"amd64\",\n            \"author\": \"NGINX Docker Maintainers <docker-maint@nginx.com>\",\n            \"config\": {\n                \"Cmd\": [\n                    \"nginx\",\n                    \"-c\",\n                    \"/etc/nginx/nginx.conf\",\n                    \"-g\",\n                    \"daemon off;\"\n                ],\n                \"Entrypoint\": [\n                    \"/entrypoint.sh\"\n                ],\n                \"Env\": [\n                    \"PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin\",\n                    \"NGINX_VERSION=1.17.5\",\n                    \"NJS_VERSION=0.3.6\",\n                    \"PKG_RELEASE=1\",\n                    \"LANG=es_ES.UTF-8\",\n                    \"LANGUAGE=es_ES:es\",\n                    \"LC_ALL=es_ES.UTF-8\",\n                    \"NGINX_BASEDIR=/ng-app\",\n                    \"BUILDNUMBER=20240125-194014-BUILD\"\n                ],\n                \"ExposedPorts\": {\n                    \"80/tcp\": {},\n                    \"8080/tcp\": {},\n                    \"8443/tcp\": {},\n                    \"9001/tcp\": {}\n                },\n                \"Labels\": {\n                    \"devops-service\": \"nginx\",\n                    \"maintainer\": \"NGINX Docker Maintainers <docker-maint@nginx.com>\",\n                    \"version\": \"1.17\"\n                },\n                \"StopSignal\": \"SIGTERM\",\n                \"User\": \"nginx\",\n                \"WorkingDir\": \"/ng-app\"\n            },\n            \"created\": \"2024-01-25T19:41:27.604578877Z\",\n            \"os\": \"linux\"\n        },\n        \"icon\": \"sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06\",\n        \"id\": 201746,\n        \"labels\": null,\n        \"manifest_media_type\": \"application/vnd.docker.distribution.manifest.v2+json\",\n        \"media_type\": \"application/vnd.docker.container.image.v1+json\",\n        \"project_id\": 91,\n        \"pull_time\": \"2025-10-20T21:51:47.161Z\",\n        \"push_time\": \"2024-01-25T19:41:34.747Z\",\n        \"references\": null,\n        \"repository_id\": 3893,\n        \"size\": 27876891,\n        \"tags\": [\n            {\n                \"artifact_id\": 201746,\n                \"id\": 187357,\n                \"immutable\": false,\n                \"name\": \"20240125-194014-BUILD\",\n                \"pull_time\": \"2024-03-22T20:52:55.941Z\",\n                \"push_time\": \"2024-01-25T19:41:35.137Z\",\n                \"repository_id\": 3893,\n                \"signed\": false\n            }\n        ],\n        \"type\": \"IMAGE\"\n    }\n]"
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,20 @@
+[
+    {
+        "artifact_count": 2,
+        "creation_time": "2025-08-05T14:02:08.152Z",
+        "id": 12763,
+        "name": "some/project",
+        "project_id": 91,
+        "pull_count": 0,
+        "update_time": "2025-08-05T14:02:08.152Z"
+    },
+    {
+        "artifact_count": 19,
+        "creation_time": "2025-08-04T22:35:27.573Z",
+        "id": 12752,
+        "name": "another/project",
+        "project_id": 91,
+        "pull_count": 17,
+        "update_time": "2025-09-22T19:51:50.477Z"
+    }
+]
