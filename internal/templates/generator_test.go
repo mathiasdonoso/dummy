@@ -6,11 +6,36 @@ import (
 	"path/filepath"
 	"testing"
 
+	"github.com/google/go-cmp/cmp"
 	"github.com/mathiasdonoso/dummy/internal/model"
 	testutils "github.com/mathiasdonoso/dummy/pkg/test_utils"
 )
 
+type endpointConfig struct {
+	jsonFileContent string
+	metaFileContent string
+}
+
+func assertFileContent(t *testing.T, gotPath, wantPath string) {
+	t.Helper()
+
+	got, err := os.ReadFile(gotPath)
+	if err != nil {
+		t.Fatalf("failed to read file %s: %v", gotPath, err)
+	}
+
+	want, err := os.ReadFile(wantPath)
+	if err != nil {
+		t.Fatalf("failed to read file %s: %v", wantPath, err)
+	}
+
+	if diff := cmp.Diff(string(want), string(got)); diff != "" {
+		t.Errorf("content mismatch for %s (-want +got):\n%s", gotPath, diff)
+	}
+}
+
 func TestProjectGeneration(t *testing.T) {
+	tmpDir := t.TempDir()
 	harborResult := model.ImportResult{
 		ServiceName: "harbor api",
 		Endpoints: []model.Endpoint{
@@ -71,13 +96,31 @@ func TestProjectGeneration(t *testing.T) {
 		},
 	}
 
-	tmpDir := t.TempDir()
 	tests := []struct {
 		name    string
 		model   model.ImportResult
+		want    map[string]endpointConfig
 		wantErr bool
 	}{
-		{"harbor api basic import", harborResult, false},
+		{
+			"harbor api basic import",
+			harborResult,
+			map[string]endpointConfig{
+				"GET_/api/v2.0/projects": {
+					jsonFileContent: "./test_data/result_projects_response.json",
+					metaFileContent: "./test_data/result_projects_meta.yaml",
+				},
+				"GET_/api/v2.0/projects/someproject/repositories": {
+					jsonFileContent: "./test_data/result_repositories_response.json",
+					metaFileContent: "./test_data/result_repositories_meta.yaml",
+				},
+				"GET_/api/v2.0/projects/someproject/repositories/somerepository/artifacts": {
+					jsonFileContent: "./test_data/result_artifacts_response.json",
+					metaFileContent: "./test_data/result_artifacts_meta.yaml",
+				},
+			},
+			false,
+		},
 	}
 
 	for _, tt := range tests {
@@ -96,19 +139,13 @@ func TestProjectGeneration(t *testing.T) {
 			}
 
 			if !tt.wantErr && err == nil {
-				if _, err := os.Stat(tmpDir); os.IsNotExist(err) {
-					t.Errorf("subfolder was not created")
-				}
-
 				for _, e := range tt.model.Endpoints {
 					folderName := fmt.Sprintf("%s_%s", e.Method, e.Path)
-					if _, err := os.Stat(filepath.Join(tmpDir, folderName, "response.json")); os.IsNotExist(err) {
-						t.Errorf(fmt.Sprintf("%s/response.json was not created", folderName))
-					}
+					responseFile := filepath.Join(tmpDir, folderName, "response.json")
+					metaFile := filepath.Join(tmpDir, folderName, "meta.yaml")
 
-					if _, err := os.Stat(filepath.Join(tmpDir, folderName, "meta.yaml")); os.IsNotExist(err) {
-						t.Errorf(fmt.Sprintf("%s/meta.yaml was not created", folderName))
-					}
+					assertFileContent(t, responseFile, tt.want[folderName].jsonFileContent)
+					assertFileContent(t, metaFile, tt.want[folderName].metaFileContent)
 				}
 			}
 		})

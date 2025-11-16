@@ -1,0 +1,27 @@
+delay: 120ms
+status: 200
+
+dynamic:
+  - field: id
+    source: path.id
+  - field: created_at
+    source: now
+  - field: token
+    source: uuid
+  - field: email
+    source: random.email
+
+memory:
+  read:
+    key: "{{ path.id }}"
+    store: "users"
+
+responses:
+  default: response.json
+  variants:
+    - weight: 5
+      file: response_error.json
+      status: 500
+    - weight: 1
+      file: response_timeout.json
+      delay: 2s

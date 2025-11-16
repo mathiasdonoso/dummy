@@ -1,0 +1,7 @@
+{
+    "id": "{{ path.id }}",
+    "email": "user_{{ random.int 1000 9999 }}@example.com",
+    "token": "{{ uuid }}",
+    "created_at": "{{ now }}",
+    "active": true
+}
