@@ -1,0 +1,2738 @@
+[
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755/additions/build_history"
+            }
+        },
+        "digest": "sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20240125-194014-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2024-01-25T19:41:27.604578877Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 201746,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2025-10-20T21:51:47.161Z",
+        "push_time": "2024-01-25T19:41:34.747Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27876891,
+        "tags": [
+            {
+                "artifact_id": 201746,
+                "id": 187357,
+                "immutable": false,
+                "name": "20240125-194014-BUILD",
+                "pull_time": "2024-03-22T20:52:55.941Z",
+                "push_time": "2024-01-25T19:41:35.137Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:e412b046caca0d6c1e5fcb14b87b30e18c4c99d85a011e96a587b11d7e49b544/additions/build_history"
+            }
+        },
+        "digest": "sha256:e412b046caca0d6c1e5fcb14b87b30e18c4c99d85a011e96a587b11d7e49b544",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20240122-203825-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2024-01-22T20:44:51.111058733Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 201031,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2024-01-24T04:42:25.588Z",
+        "push_time": "2024-01-22T20:45:04.677Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27877191,
+        "tags": [
+            {
+                "artifact_id": 201031,
+                "id": 186744,
+                "immutable": false,
+                "name": "20240122-203825-BUILD",
+                "pull_time": "2024-01-22T20:47:45.004Z",
+                "push_time": "2024-01-22T20:45:05.163Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:c3b06de5be5002c0ac7e00acce4ac2e87492503e19900e3f7b57208254794776/additions/build_history"
+            }
+        },
+        "digest": "sha256:c3b06de5be5002c0ac7e00acce4ac2e87492503e19900e3f7b57208254794776",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20240118-182014-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2024-01-18T18:22:55.851826083Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 200583,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2024-01-19T14:24:27.430Z",
+        "push_time": "2024-01-18T18:23:03.696Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27876692,
+        "tags": [
+            {
+                "artifact_id": 200583,
+                "id": 186394,
+                "immutable": false,
+                "name": "20240118-182014-BUILD",
+                "pull_time": "2024-01-18T18:25:17.862Z",
+                "push_time": "2024-01-18T18:23:03.964Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:d8b59f06754888422a419aee8fda75636d7a6aff70e2c07f7aa3f944e8c58b8a/additions/build_history"
+            }
+        },
+        "digest": "sha256:d8b59f06754888422a419aee8fda75636d7a6aff70e2c07f7aa3f944e8c58b8a",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20240115-205504-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2024-01-15T20:56:25.267451605Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 200026,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2024-01-17T21:06:15.515Z",
+        "push_time": "2024-01-15T20:56:35.026Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27876610,
+        "tags": [
+            {
+                "artifact_id": 200026,
+                "id": 185900,
+                "immutable": false,
+                "name": "20240115-205504-BUILD",
+                "pull_time": "2024-01-15T20:58:06.089Z",
+                "push_time": "2024-01-15T20:56:35.384Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:1b7ca34f252e0d2919038c5bd89b5b05a0702c4d19065c0e89ea1d211d0a1955/additions/build_history"
+            }
+        },
+        "digest": "sha256:1b7ca34f252e0d2919038c5bd89b5b05a0702c4d19065c0e89ea1d211d0a1955",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20240103-150014-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2024-01-03T15:01:45.129144419Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 198025,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2024-01-18T14:17:47.169Z",
+        "push_time": "2024-01-03T15:01:53.630Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27876588,
+        "tags": [
+            {
+                "artifact_id": 198025,
+                "id": 184283,
+                "immutable": false,
+                "name": "20240103-150014-BUILD",
+                "pull_time": "2024-01-03T15:03:42.407Z",
+                "push_time": "2024-01-03T15:01:53.940Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:3da1a7a1ac7a98466f8d19bb4efa43fea9072c724d08857731f33a765e4e396f/additions/build_history"
+            }
+        },
+        "digest": "sha256:3da1a7a1ac7a98466f8d19bb4efa43fea9072c724d08857731f33a765e4e396f",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20240102-213242-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2024-01-02T21:34:37.023721102Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 197979,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2024-01-02T21:36:13.690Z",
+        "push_time": "2024-01-02T21:34:45.353Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27876627,
+        "tags": [
+            {
+                "artifact_id": 197979,
+                "id": 184247,
+                "immutable": false,
+                "name": "20240102-213242-BUILD",
+                "pull_time": "2024-01-02T21:36:13.690Z",
+                "push_time": "2024-01-02T21:34:45.770Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:473840ad80031750e32e1ec19c1225686f648b442291b4eb342eadceb27768f1/additions/build_history"
+            }
+        },
+        "digest": "sha256:473840ad80031750e32e1ec19c1225686f648b442291b4eb342eadceb27768f1",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20231205-174854-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-12-05T17:50:38.552926417Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 194204,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2024-01-04T19:32:27.365Z",
+        "push_time": "2023-12-05T17:50:48.639Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27876989,
+        "tags": [
+            {
+                "artifact_id": 194204,
+                "id": 181173,
+                "immutable": false,
+                "name": "20231205-174854-BUILD",
+                "pull_time": "2023-12-05T17:52:08.060Z",
+                "push_time": "2023-12-05T17:50:48.884Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:4ddaf58a6bc1038aabe929e77ba5a5aae529a129f81dcc52c0539786dc5d4bbb/additions/build_history"
+            }
+        },
+        "digest": "sha256:4ddaf58a6bc1038aabe929e77ba5a5aae529a129f81dcc52c0539786dc5d4bbb",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20231122-184128-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-11-22T18:42:45.748501463Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 191703,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-11-22T18:44:24.679Z",
+        "push_time": "2023-11-22T18:43:01.367Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27877135,
+        "tags": [
+            {
+                "artifact_id": 191703,
+                "id": 179138,
+                "immutable": false,
+                "name": "20231122-184128-BUILD",
+                "pull_time": "2023-11-22T18:44:24.679Z",
+                "push_time": "2023-11-22T18:43:01.955Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:8a76773cba9e99f4da27cf639625cec6be5287796f687979a6fdeabb8fc6232f/additions/build_history"
+            }
+        },
+        "digest": "sha256:8a76773cba9e99f4da27cf639625cec6be5287796f687979a6fdeabb8fc6232f",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20231115-193317-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-11-15T19:35:20.178819086Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 190417,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-12-06T11:15:09.908Z",
+        "push_time": "2023-11-15T19:35:30.529Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27877108,
+        "tags": [
+            {
+                "artifact_id": 190417,
+                "id": 178121,
+                "immutable": false,
+                "name": "20231115-193317-BUILD",
+                "pull_time": "2023-11-15T19:37:31.608Z",
+                "push_time": "2023-11-15T19:35:30.832Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:24348b42085265e89f25026b5fbdf0e5f2d48dccd11717968679340c5948c00f/additions/build_history"
+            }
+        },
+        "digest": "sha256:24348b42085265e89f25026b5fbdf0e5f2d48dccd11717968679340c5948c00f",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20231115-172446-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-11-15T17:26:15.778044819Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 190300,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-11-17T15:13:09.858Z",
+        "push_time": "2023-11-15T17:26:26.904Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27877980,
+        "tags": [
+            {
+                "artifact_id": 190300,
+                "id": 178020,
+                "immutable": false,
+                "name": "20231115-172446-BUILD",
+                "pull_time": "2023-11-15T17:27:35.358Z",
+                "push_time": "2023-11-15T17:26:27.384Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:8f816c9b3dd98c1e8e7522937c220bff313c8137b20a55e797ef29ef701c91f8/additions/build_history"
+            }
+        },
+        "digest": "sha256:8f816c9b3dd98c1e8e7522937c220bff313c8137b20a55e797ef29ef701c91f8",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20231106-201225-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-11-06T20:14:24.711308682Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 188646,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-11-15T15:52:42.118Z",
+        "push_time": "2023-11-06T20:14:35.550Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27877946,
+        "tags": [
+            {
+                "artifact_id": 188646,
+                "id": 176640,
+                "immutable": false,
+                "name": "20231106-201225-BUILD",
+                "pull_time": "2023-11-06T20:16:14.073Z",
+                "push_time": "2023-11-06T20:14:36.029Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:fa468130adfd68422be332706d17176c18f172a0918521f12d65d9c7e172489d/additions/build_history"
+            }
+        },
+        "digest": "sha256:fa468130adfd68422be332706d17176c18f172a0918521f12d65d9c7e172489d",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20231026-133734-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-10-26T13:39:01.946514851Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 187388,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-12-03T10:59:24.072Z",
+        "push_time": "2023-10-26T13:39:11.384Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27877967,
+        "tags": [
+            {
+                "artifact_id": 187388,
+                "id": 175620,
+                "immutable": false,
+                "name": "20231026-133734-BUILD",
+                "pull_time": "2023-10-26T13:41:16.706Z",
+                "push_time": "2023-10-26T13:39:12.063Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:c55f2f321788e1479d92230747a70217ad1d9a8ddd7f74b8ad02841e67d7316d/additions/build_history"
+            }
+        },
+        "digest": "sha256:c55f2f321788e1479d92230747a70217ad1d9a8ddd7f74b8ad02841e67d7316d",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20231012-161818-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-10-12T16:20:49.018274591Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 184768,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-10-25T10:58:57.584Z",
+        "push_time": "2023-10-12T16:20:58.269Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27877915,
+        "tags": [
+            {
+                "artifact_id": 184768,
+                "id": 173358,
+                "immutable": false,
+                "name": "20231012-161818-BUILD",
+                "pull_time": "2023-10-12T16:22:06.109Z",
+                "push_time": "2023-10-12T16:20:58.663Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:955285f91c95115aa27ff9791f9e3b1254e3ae280dbf7486bfbefa9690a2f1db/additions/build_history"
+            }
+        },
+        "digest": "sha256:955285f91c95115aa27ff9791f9e3b1254e3ae280dbf7486bfbefa9690a2f1db",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230810-213958-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-08-10T21:47:01.409859776Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 173122,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-10-12T12:42:36.605Z",
+        "push_time": "2023-08-10T21:47:31.507Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879512,
+        "tags": [
+            {
+                "artifact_id": 173122,
+                "id": 163593,
+                "immutable": false,
+                "name": "20230810-213958-BUILD",
+                "pull_time": "2023-08-10T21:49:17.728Z",
+                "push_time": "2023-08-10T21:47:31.766Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:05ffe35f4605b79a416bec8e44d98c9398da55c0bceca1f268012b2581fd4d61/additions/build_history"
+            }
+        },
+        "digest": "sha256:05ffe35f4605b79a416bec8e44d98c9398da55c0bceca1f268012b2581fd4d61",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230804-153038-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-08-04T15:35:16.468733843Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 171341,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-08-10T20:18:06.811Z",
+        "push_time": "2023-08-04T15:35:28.249Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879516,
+        "tags": [
+            {
+                "artifact_id": 171341,
+                "id": 162219,
+                "immutable": false,
+                "name": "20230804-153038-BUILD",
+                "pull_time": "2023-08-04T15:36:38.455Z",
+                "push_time": "2023-08-04T15:35:29.055Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:a654a0062180b226312c0181ba1cef32d666e5e7619bdddb8f5771fbdcd5d368/additions/build_history"
+            }
+        },
+        "digest": "sha256:a654a0062180b226312c0181ba1cef32d666e5e7619bdddb8f5771fbdcd5d368",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230727-000900-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-07-27T00:10:35.471164328Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 169138,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-08-01T15:19:01.060Z",
+        "push_time": "2023-07-27T00:10:46.939Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879451,
+        "tags": [
+            {
+                "artifact_id": 169138,
+                "id": 160496,
+                "immutable": false,
+                "name": "20230727-000900-BUILD",
+                "pull_time": "2023-07-27T00:11:48.779Z",
+                "push_time": "2023-07-27T00:10:47.609Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:ce8109b0d2550426e5bbd8abaf96b25de54b605d5fe51a59b584d11841b97ef2/additions/build_history"
+            }
+        },
+        "digest": "sha256:ce8109b0d2550426e5bbd8abaf96b25de54b605d5fe51a59b584d11841b97ef2",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230720-210724-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-07-20T21:09:39.442441455Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 167588,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-07-27T19:19:16.405Z",
+        "push_time": "2023-07-20T21:09:51.202Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879435,
+        "tags": [
+            {
+                "artifact_id": 167588,
+                "id": 159214,
+                "immutable": false,
+                "name": "20230720-210724-BUILD",
+                "pull_time": "2023-07-20T21:10:58.068Z",
+                "push_time": "2023-07-20T21:09:51.626Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:d8533bf351f6f87bce072f4b3bda9b38a8777e05ea365cc0ca274d0af70461ed/additions/build_history"
+            }
+        },
+        "digest": "sha256:d8533bf351f6f87bce072f4b3bda9b38a8777e05ea365cc0ca274d0af70461ed",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230719-170852-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-07-19T17:10:44.623901177Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 167026,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-07-21T14:23:50.997Z",
+        "push_time": "2023-07-19T17:11:05.302Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879453,
+        "tags": [
+            {
+                "artifact_id": 167026,
+                "id": 158765,
+                "immutable": false,
+                "name": "20230719-170852-BUILD",
+                "pull_time": "2023-07-19T17:12:21.784Z",
+                "push_time": "2023-07-19T17:11:05.535Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:ab8b864f4f6aededca8f1423bdd4f01f18bc417f0277baa642bd4f1c0abf0b9b/additions/build_history"
+            }
+        },
+        "digest": "sha256:ab8b864f4f6aededca8f1423bdd4f01f18bc417f0277baa642bd4f1c0abf0b9b",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230704-141104-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-07-04T14:13:59.809187434Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 162947,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-07-19T17:04:28.118Z",
+        "push_time": "2023-07-04T14:14:23.654Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879448,
+        "tags": [
+            {
+                "artifact_id": 162947,
+                "id": 155561,
+                "immutable": false,
+                "name": "20230704-141104-BUILD",
+                "pull_time": "2023-07-04T14:16:29.266Z",
+                "push_time": "2023-07-04T14:14:24.461Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:6cd6f53a3ec0817edbbfadd74200563180405473af166bf2919cff3778a6ab67/additions/build_history"
+            }
+        },
+        "digest": "sha256:6cd6f53a3ec0817edbbfadd74200563180405473af166bf2919cff3778a6ab67",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230703-215355-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-07-03T21:55:57.816084471Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 162856,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-07-03T22:06:39.585Z",
+        "push_time": "2023-07-03T21:56:14.454Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879420,
+        "tags": [
+            {
+                "artifact_id": 162856,
+                "id": 155494,
+                "immutable": false,
+                "name": "20230703-215355-BUILD",
+                "pull_time": "2023-07-03T21:57:27.477Z",
+                "push_time": "2023-07-03T21:56:14.840Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:311091a4b1e4e9aa5b7047f1af7915e7923993a58c54f22a27764bff400ce692/additions/build_history"
+            }
+        },
+        "digest": "sha256:311091a4b1e4e9aa5b7047f1af7915e7923993a58c54f22a27764bff400ce692",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230703-180054-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-07-03T18:03:19.594174845Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 162705,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-07-03T21:17:38.105Z",
+        "push_time": "2023-07-03T18:03:31.893Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879395,
+        "tags": [
+            {
+                "artifact_id": 162705,
+                "id": 155365,
+                "immutable": false,
+                "name": "20230703-180054-BUILD",
+                "pull_time": "2023-07-03T18:04:55.515Z",
+                "push_time": "2023-07-03T18:03:32.259Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:4c27e1588e7801b51e1b929ab26ef83600e5bff175805267cd61434f499fc20a/additions/build_history"
+            }
+        },
+        "digest": "sha256:4c27e1588e7801b51e1b929ab26ef83600e5bff175805267cd61434f499fc20a",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230630-150436-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-06-30T15:06:32.463350324Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 162291,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-07-03T15:05:07.817Z",
+        "push_time": "2023-06-30T15:06:43.624Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879434,
+        "tags": [
+            {
+                "artifact_id": 162291,
+                "id": 155049,
+                "immutable": false,
+                "name": "20230630-150436-BUILD",
+                "pull_time": "2023-06-30T15:07:45.525Z",
+                "push_time": "2023-06-30T15:06:44.002Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:aa3c9d9d68f20dc60fab53529e9fda2dedae6f2d063d468d832023c4a200a8f9/additions/build_history"
+            }
+        },
+        "digest": "sha256:aa3c9d9d68f20dc60fab53529e9fda2dedae6f2d063d468d832023c4a200a8f9",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230629-181926-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-06-29T18:22:44.822218553Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 162026,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-06-29T18:30:29.841Z",
+        "push_time": "2023-06-29T18:23:01.416Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27879510,
+        "tags": [
+            {
+                "artifact_id": 162026,
+                "id": 154864,
+                "immutable": false,
+                "name": "20230629-181926-BUILD",
+                "pull_time": "2023-06-29T18:26:08.983Z",
+                "push_time": "2023-06-29T18:23:02.194Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:bac33e44fe1f31e49d41122fb6c9fc99cdb04eb344db47d968ac080272a2450e/additions/build_history"
+            }
+        },
+        "digest": "sha256:bac33e44fe1f31e49d41122fb6c9fc99cdb04eb344db47d968ac080272a2450e",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230601-164241-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-06-01T16:45:06.400271472Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 155453,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-06-19T15:10:48.301Z",
+        "push_time": "2023-06-01T16:45:17.514Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858508,
+        "tags": [
+            {
+                "artifact_id": 155453,
+                "id": 149702,
+                "immutable": false,
+                "name": "20230601-164241-BUILD",
+                "pull_time": "2023-06-01T16:46:37.742Z",
+                "push_time": "2023-06-01T16:45:17.830Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:f1101ae411874d86c196826ccd5ab2f320c49f155d4d9272127d075cae99fe31/additions/build_history"
+            }
+        },
+        "digest": "sha256:f1101ae411874d86c196826ccd5ab2f320c49f155d4d9272127d075cae99fe31",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230522-183958-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-05-22T18:43:44.957375252Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 152837,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-08-05T14:28:49.736Z",
+        "push_time": "2023-05-22T18:50:09.830Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858364,
+        "tags": [
+            {
+                "artifact_id": 152837,
+                "id": 147589,
+                "immutable": false,
+                "name": "20230522-183958-BUILD",
+                "pull_time": "2023-05-22T18:51:37.899Z",
+                "push_time": "2023-05-22T18:50:10.112Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:0e1c2e5da24e9edf9902a1b3b01d8b1e794bc95109b9ab707340a76fad43ce66/additions/build_history"
+            }
+        },
+        "digest": "sha256:0e1c2e5da24e9edf9902a1b3b01d8b1e794bc95109b9ab707340a76fad43ce66",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230426-202158-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-04-26T20:23:33.506564219Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 146443,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-05-23T16:44:22.333Z",
+        "push_time": "2023-04-26T20:23:45.163Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858056,
+        "tags": [
+            {
+                "artifact_id": 146443,
+                "id": 142433,
+                "immutable": false,
+                "name": "20230426-202158-BUILD",
+                "pull_time": "2023-04-26T20:24:54.705Z",
+                "push_time": "2023-04-26T20:23:45.451Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:9ae25976ffe14a6ec70e32f322bc0b4a83594a4fdc54eecbb81c7d5a7a09eb71/additions/build_history"
+            }
+        },
+        "digest": "sha256:9ae25976ffe14a6ec70e32f322bc0b4a83594a4fdc54eecbb81c7d5a7a09eb71",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230418-202720-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-04-18T20:30:04.723387128Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 144127,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-04-26T21:07:00.581Z",
+        "push_time": "2023-04-18T20:30:16.179Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858168,
+        "tags": [
+            {
+                "artifact_id": 144127,
+                "id": 140536,
+                "immutable": false,
+                "name": "20230418-202720-BUILD",
+                "pull_time": "0001-01-01T00:00:00.000Z",
+                "push_time": "2023-04-18T20:30:16.635Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:03b19bd0be5e35662ba2c00065cd2e2b4af4aae096756830c8f04f3e5e80ae22/additions/build_history"
+            }
+        },
+        "digest": "sha256:03b19bd0be5e35662ba2c00065cd2e2b4af4aae096756830c8f04f3e5e80ae22",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230418-193511-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-04-18T19:36:51.394249176Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 144096,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "0001-01-01T00:00:00.000Z",
+        "push_time": "2023-04-18T19:37:11.569Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858151,
+        "tags": [
+            {
+                "artifact_id": 144096,
+                "id": 140512,
+                "immutable": false,
+                "name": "20230418-193511-BUILD",
+                "pull_time": "0001-01-01T00:00:00.000Z",
+                "push_time": "2023-04-18T19:37:12.065Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:a0e619397481a2bbe4c0486d297b53130f192ce0d1534ed9af36a3f2e051f27a/additions/build_history"
+            }
+        },
+        "digest": "sha256:a0e619397481a2bbe4c0486d297b53130f192ce0d1534ed9af36a3f2e051f27a",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230411-194301-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-04-11T19:44:36.574722386Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 142063,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-04-25T14:18:20.956Z",
+        "push_time": "2023-04-11T19:44:53.778Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858157,
+        "tags": [
+            {
+                "artifact_id": 142063,
+                "id": 138881,
+                "immutable": false,
+                "name": "20230411-194301-BUILD",
+                "pull_time": "2023-04-11T19:45:53.939Z",
+                "push_time": "2023-04-11T19:44:54.078Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:e93d12d0eeb7760df2243318c1ebd2ecc887bf0e15b3acb167e1ba2bd19a33af/additions/build_history"
+            }
+        },
+        "digest": "sha256:e93d12d0eeb7760df2243318c1ebd2ecc887bf0e15b3acb167e1ba2bd19a33af",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230411-135728-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-04-11T13:59:37.415813673Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 141888,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-04-11T16:00:07.232Z",
+        "push_time": "2023-04-11T13:59:48.500Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858117,
+        "tags": [
+            {
+                "artifact_id": 141888,
+                "id": 138739,
+                "immutable": false,
+                "name": "20230411-135728-BUILD",
+                "pull_time": "2023-04-11T14:00:51.345Z",
+                "push_time": "2023-04-11T13:59:48.766Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:0808832582f947626c849c646a6af7d66b03221dcb0e975ce8413c3ba0a5bb23/additions/build_history"
+            }
+        },
+        "digest": "sha256:0808832582f947626c849c646a6af7d66b03221dcb0e975ce8413c3ba0a5bb23",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230406-144154-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-04-06T14:44:06.47006149Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 141249,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-04-11T19:35:25.978Z",
+        "push_time": "2023-04-06T14:44:21.086Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858843,
+        "tags": [
+            {
+                "artifact_id": 141249,
+                "id": 138295,
+                "immutable": false,
+                "name": "20230406-144154-BUILD",
+                "pull_time": "2023-04-06T14:45:18.898Z",
+                "push_time": "2023-04-06T14:44:21.404Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:13ffab2d6c40a514189e29a822163f04c63b8019d0a15ee1d5ff660f3b22f10a/additions/build_history"
+            }
+        },
+        "digest": "sha256:13ffab2d6c40a514189e29a822163f04c63b8019d0a15ee1d5ff660f3b22f10a",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230405-195633-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-04-05T20:01:21.473753733Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 141075,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-04-05T21:29:15.188Z",
+        "push_time": "2023-04-05T20:01:32.393Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858489,
+        "tags": [
+            {
+                "artifact_id": 141075,
+                "id": 138148,
+                "immutable": false,
+                "name": "20230405-195633-BUILD",
+                "pull_time": "2023-04-05T20:02:37.373Z",
+                "push_time": "2023-04-05T20:01:32.710Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:39570f2f4c7215f905dc72688beb0ced58456b8311f6b81363021588b091d32b/additions/build_history"
+            }
+        },
+        "digest": "sha256:39570f2f4c7215f905dc72688beb0ced58456b8311f6b81363021588b091d32b",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230308-192117-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-03-08T19:38:27.634946059Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 133018,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-04-10T15:05:51.061Z",
+        "push_time": "2023-03-08T19:38:50.704Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858948,
+        "tags": [
+            {
+                "artifact_id": 133018,
+                "id": 131519,
+                "immutable": false,
+                "name": "20230308-192117-BUILD",
+                "pull_time": "2023-03-08T19:51:45.415Z",
+                "push_time": "2023-03-08T19:38:50.974Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:986a413e72b8492ac9146d8885edc6d9ca059041227da62fcb15e3e0168b5c63/additions/build_history"
+            }
+        },
+        "digest": "sha256:986a413e72b8492ac9146d8885edc6d9ca059041227da62fcb15e3e0168b5c63",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230110-212236-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-01-10T21:24:16.470616206Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 119208,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-06-06T07:25:41.808Z",
+        "push_time": "2023-01-10T21:24:29.164Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858819,
+        "tags": [
+            {
+                "artifact_id": 119208,
+                "id": 120324,
+                "immutable": false,
+                "name": "20230110-212236-BUILD",
+                "pull_time": "2023-01-10T21:25:31.306Z",
+                "push_time": "2023-01-10T21:24:29.692Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:2909ffe2e03b29fc4fea2b7d89fa5c66f90bd90ab79517207b87f7440bfab6e8/additions/build_history"
+            }
+        },
+        "digest": "sha256:2909ffe2e03b29fc4fea2b7d89fa5c66f90bd90ab79517207b87f7440bfab6e8",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20230104-005217-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2023-01-04T00:53:54.465481047Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 117585,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-01-10T21:21:35.500Z",
+        "push_time": "2023-01-04T00:54:06.075Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27858943,
+        "tags": [
+            {
+                "artifact_id": 117585,
+                "id": 119006,
+                "immutable": false,
+                "name": "20230104-005217-BUILD",
+                "pull_time": "2023-01-04T00:55:02.994Z",
+                "push_time": "2023-01-04T00:54:06.390Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    },
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:af07ed4e4f6f800faa479cb8025f09a9343d9f415f4391b912cab262058a014f/additions/build_history"
+            }
+        },
+        "digest": "sha256:af07ed4e4f6f800faa479cb8025f09a9343d9f415f4391b912cab262058a014f",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20221202-173955-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2022-12-02T17:41:56.686857661Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 109845,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2023-01-10T17:22:23.500Z",
+        "push_time": "2022-12-02T17:42:07.349Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27859032,
+        "tags": [
+            {
+                "artifact_id": 109845,
+                "id": 112540,
+                "immutable": false,
+                "name": "20221202-173955-BUILD",
+                "pull_time": "2022-12-02T17:43:14.737Z",
+                "push_time": "2022-12-02T17:42:07.631Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    }
+]
