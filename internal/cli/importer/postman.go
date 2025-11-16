@@ -6,6 +6,7 @@ import (
 	"os"
 
 	"github.com/mathiasdonoso/dummy/internal/postman"
+	"github.com/mathiasdonoso/dummy/internal/server"
 )
 
 func ImportPostmanHandler(args []string) error {
@@ -21,10 +22,18 @@ func ImportPostmanHandler(args []string) error {
 		return nil
 	}
 
-	_, err = postman.Parse(d)
+	m, err := postman.Parse(d)
 	if err != nil {
 		return err
 	}
+
+	s := server.NewServer()
+	err = s.StartAndBlock(*m)
+	if err != nil {
+		return err
+	}
+
+	fmt.Printf("Server running at localhost:%d\n", s.Port)
 
 	return nil
 }
