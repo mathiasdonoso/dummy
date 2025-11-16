@@ -34,7 +34,7 @@ func TestProjectGeneration(t *testing.T) {
 			},
 			{
 				Method:      "GET",
-				Path:        "/api/v2.0/projects/onboarding/repositories",
+				Path:        "/api/v2.0/projects/someproject/repositories",
 				Description: "",
 				Responses: []model.MockResponse{
 					{
@@ -52,7 +52,7 @@ func TestProjectGeneration(t *testing.T) {
 			},
 			{
 				Method:      "GET",
-				Path:        "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts",
+				Path:        "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
 				Description: "",
 				Responses: []model.MockResponse{
 					{
