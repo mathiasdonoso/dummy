@@ -9,7 +9,7 @@ type Endpoint struct {
 	Method      string
 	Path        string
 	Description string
-	Responses   []MockResponse
+	Response    MockResponse
 	Headers     map[string]string
 	QueryParams map[string]string
 }

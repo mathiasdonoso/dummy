@@ -33,7 +33,5 @@ func ImportPostmanHandler(args []string) error {
 		return err
 	}
 
-	fmt.Printf("Server running at localhost:%d\n", s.Port)
-
 	return nil
 }

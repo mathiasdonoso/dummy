@@ -59,7 +59,7 @@ func NewServer(opts ...OptFunc) *server {
 func waitUntilListening(port int) error {
 	addr := fmt.Sprintf("localhost:%d", port)
 
-	for i := 0; i < 50; i++ { // retry for ~1 second
+	for range 50 {
 		conn, err := net.Dial("tcp", addr)
 		if err == nil {
 			conn.Close()
@@ -71,6 +71,7 @@ func waitUntilListening(port int) error {
 	return fmt.Errorf("server not responding on port %d", port)
 }
 
+// For testing purposes
 func (s *server) Start(model model.ImportResult) error {
 	mux := s.buildMux(model)
 
@@ -83,6 +84,8 @@ func (s *server) Start(model model.ImportResult) error {
 
 func (s *server) StartAndBlock(model model.ImportResult) error {
 	mux := s.buildMux(model)
+
+	fmt.Printf("Starting server at localhost:%d\n", s.Port)
 	return http.ListenAndServe(fmt.Sprintf(":%d", s.Port), mux)
 }
 
@@ -95,7 +98,7 @@ func (s *server) buildMux(model model.ImportResult) *http.ServeMux {
 		mux.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
 			slog.Debug(fmt.Sprintf("configuring endpoint %s", endpoint))
 
-			res := epCopy.Responses[0]
+			res := epCopy.Response
 			for k, v := range res.Headers {
 				w.Header().Set(k, v)
 			}

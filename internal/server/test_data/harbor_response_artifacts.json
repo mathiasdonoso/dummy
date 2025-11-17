@@ -3,7 +3,7 @@
         "addition_links": {
             "build_history": {
                 "absolute": false,
-                "href": "/api/v2.0/projects/onboarding/repositories/ng-ui-mx/artifacts/sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755/additions/build_history"
+                "href": "/api/v2.0/projects/someproject/repositories/somerepository/artifacts/sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755/additions/build_history"
             }
         },
         "digest": "sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755",
