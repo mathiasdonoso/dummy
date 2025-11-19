@@ -3,14 +3,14 @@ package cli
 import "github.com/mathiasdonoso/dummy/internal/cli/importer"
 
 var CommandRegistry = map[string]*CommandNode{
-	"import": {
-		Name:        "import",
-		Description: "Import external API definitions into dummy templates",
+	"run": {
+		Name:        "run",
+		Description: "Starts a mock server using the format specified by the chosen subcommand",
 		Subcommands: map[string]*CommandNode{
 			"postman": {
 				Name:        "postman",
-				Description: "Import a Postman collection",
-				Handler:     importer.ImportPostmanHandler,
+				Description: "Starts a a mock server directly from a Postman Collection file",
+				Handler:     importer.PostmanHandler,
 				Subcommands: map[string]*CommandNode{},
 				Flags:       map[string]string{},
 			},

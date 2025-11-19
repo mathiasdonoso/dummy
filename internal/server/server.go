@@ -5,6 +5,8 @@ import (
 	"log/slog"
 	"net"
 	"net/http"
+	"os"
+	"text/tabwriter"
 	"time"
 
 	"github.com/mathiasdonoso/dummy/internal/model"
@@ -89,16 +91,33 @@ func (s *server) StartAndBlock(model model.ImportResult) error {
 	return http.ListenAndServe(fmt.Sprintf(":%d", s.Port), mux)
 }
 
+func printEndpoints(model model.ImportResult) {
+	w := tabwriter.NewWriter(os.Stdout, 0, 0, 2, ' ', 0)
+
+	fmt.Fprintln(w, "METHOD\tPATH\tSTATUS")
+	for _, e := range model.Endpoints {
+		fmt.Fprintf(
+			w,
+			"%s\t%s\t%d\n",
+			e.Method,
+			e.Path,
+			e.Response.StatusCode,
+		)
+	}
+
+	w.Flush()
+	fmt.Println()
+}
+
 func (s *server) buildMux(model model.ImportResult) *http.ServeMux {
 	mux := http.NewServeMux()
 
-	for _, ep := range model.Endpoints {
-		epCopy := ep
-		endpoint := fmt.Sprintf("%s %s", epCopy.Method, epCopy.Path)
+	for _, e := range model.Endpoints {
+		endpoint := fmt.Sprintf("%s %s", e.Method, e.Path)
 		mux.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
 			slog.Debug(fmt.Sprintf("configuring endpoint %s", endpoint))
 
-			res := epCopy.Response
+			res := e.Response
 			for k, v := range res.Headers {
 				w.Header().Set(k, v)
 			}
@@ -106,6 +125,8 @@ func (s *server) buildMux(model model.ImportResult) *http.ServeMux {
 			w.Write(res.Body)
 		})
 	}
+
+	printEndpoints(model)
 
 	return mux
 }
