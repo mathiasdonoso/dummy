@@ -9,7 +9,7 @@ import (
 	"github.com/mathiasdonoso/dummy/internal/server"
 )
 
-func ImportPostmanHandler(args []string) error {
+func PostmanHandler(args []string) error {
 	if len(args) < 1 {
 		return fmt.Errorf("missing Postman collection file")
 	}
