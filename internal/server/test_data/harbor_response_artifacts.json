@@ -1,0 +1,78 @@
+[
+    {
+        "addition_links": {
+            "build_history": {
+                "absolute": false,
+                "href": "/api/v2.0/projects/someproject/repositories/somerepository/artifacts/sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755/additions/build_history"
+            }
+        },
+        "digest": "sha256:7b819b89f916ceb7b888207fdaa7e45be1db144b89c8bf6c2ef003f196c12755",
+        "extra_attrs": {
+            "architecture": "amd64",
+            "author": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+            "config": {
+                "Cmd": [
+                    "nginx",
+                    "-c",
+                    "/etc/nginx/nginx.conf",
+                    "-g",
+                    "daemon off;"
+                ],
+                "Entrypoint": [
+                    "/entrypoint.sh"
+                ],
+                "Env": [
+                    "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                    "NGINX_VERSION=1.17.5",
+                    "NJS_VERSION=0.3.6",
+                    "PKG_RELEASE=1",
+                    "LANG=es_ES.UTF-8",
+                    "LANGUAGE=es_ES:es",
+                    "LC_ALL=es_ES.UTF-8",
+                    "NGINX_BASEDIR=/ng-app",
+                    "BUILDNUMBER=20240125-194014-BUILD"
+                ],
+                "ExposedPorts": {
+                    "80/tcp": {},
+                    "8080/tcp": {},
+                    "8443/tcp": {},
+                    "9001/tcp": {}
+                },
+                "Labels": {
+                    "devops-service": "nginx",
+                    "maintainer": "NGINX Docker Maintainers <docker-maint@nginx.com>",
+                    "version": "1.17"
+                },
+                "StopSignal": "SIGTERM",
+                "User": "nginx",
+                "WorkingDir": "/ng-app"
+            },
+            "created": "2024-01-25T19:41:27.604578877Z",
+            "os": "linux"
+        },
+        "icon": "sha256:0048162a053eef4d4ce3fe7518615bef084403614f8bca43b40ae2e762e11e06",
+        "id": 201746,
+        "labels": null,
+        "manifest_media_type": "application/vnd.docker.distribution.manifest.v2+json",
+        "media_type": "application/vnd.docker.container.image.v1+json",
+        "project_id": 91,
+        "pull_time": "2025-10-20T21:51:47.161Z",
+        "push_time": "2024-01-25T19:41:34.747Z",
+        "references": null,
+        "repository_id": 3893,
+        "size": 27876891,
+        "tags": [
+            {
+                "artifact_id": 201746,
+                "id": 187357,
+                "immutable": false,
+                "name": "20240125-194014-BUILD",
+                "pull_time": "2024-03-22T20:52:55.941Z",
+                "push_time": "2024-01-25T19:41:35.137Z",
+                "repository_id": 3893,
+                "signed": false
+            }
+        ],
+        "type": "IMAGE"
+    }
+]

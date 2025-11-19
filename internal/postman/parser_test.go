@@ -10,6 +10,25 @@ import (
 )
 
 func TestParsingPostmanCollection(t *testing.T) {
+	portainerApiResult := model.ImportResult{
+		ServiceName: "portainer api",
+		Endpoints: []model.Endpoint{
+			{
+				Method:      "POST",
+				Path:        "/api/auth",
+				Description: "",
+				Response: model.MockResponse{
+					StatusCode: 200,
+					Body:       testutils.MustReadFile(t, "./test_data/portainer_api/responses/auth-200.json"),
+					Headers:    map[string]string{},
+					DelayMs:    0,
+				},
+				Headers:     map[string]string{},
+				QueryParams: map[string]string{},
+			},
+		},
+	}
+
 	harborApiResult := model.ImportResult{
 		ServiceName: "harbor api",
 		Endpoints: []model.Endpoint{
@@ -17,13 +36,11 @@ func TestParsingPostmanCollection(t *testing.T) {
 				Method:      "GET",
 				Path:        "/api/v2.0/projects",
 				Description: "",
-				Responses: []model.MockResponse{
-					{
-						StatusCode: 200,
-						Body:       testutils.MustReadFile(t, "test_data/harbor_api/responses/projects-200.json"),
-						Headers:    map[string]string{},
-						DelayMs:    0,
-					},
+				Response: model.MockResponse{
+					StatusCode: 200,
+					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/projects-200.json"),
+					Headers:    map[string]string{},
+					DelayMs:    0,
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -35,13 +52,11 @@ func TestParsingPostmanCollection(t *testing.T) {
 				Method:      "GET",
 				Path:        "/api/v2.0/projects/someproject/repositories",
 				Description: "",
-				Responses: []model.MockResponse{
-					{
-						StatusCode: 200,
-						Body:       testutils.MustReadFile(t, "test_data/harbor_api/responses/repositories-200.json"),
-						Headers:    map[string]string{},
-						DelayMs:    0,
-					},
+				Response: model.MockResponse{
+					StatusCode: 200,
+					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/repositories-200.json"),
+					Headers:    map[string]string{},
+					DelayMs:    0,
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -53,13 +68,11 @@ func TestParsingPostmanCollection(t *testing.T) {
 				Method:      "GET",
 				Path:        "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
 				Description: "",
-				Responses: []model.MockResponse{
-					{
-						StatusCode: 200,
-						Body:       testutils.MustReadFile(t, "test_data/harbor_api/responses/artifacts-200.json"),
-						Headers:    map[string]string{},
-						DelayMs:    0,
-					},
+				Response: model.MockResponse{
+					StatusCode: 200,
+					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/artifacts-200.json"),
+					Headers:    map[string]string{},
+					DelayMs:    0,
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -77,6 +90,7 @@ func TestParsingPostmanCollection(t *testing.T) {
 		wantErr   bool
 	}{
 		{"harbor api basic import", "./test_data/harbor_api/harbor.postman_collection.json", &harborApiResult, false},
+		{"portainer api basic import", "./test_data/portainer_api/portainer.postman_collection.json", &portainerApiResult, false},
 	}
 
 	for _, tt := range tests {
@@ -105,9 +119,7 @@ func TestParsingPostmanCollection(t *testing.T) {
 				// Editors routinely append a final '\n' even when it's not visible,
 				// but Postman response bodies don't include it—so we normalize here.
 				for i := range tt.want.Endpoints {
-					for j := range tt.want.Endpoints[i].Responses {
-						tt.want.Endpoints[i].Responses[j].Body = bytes.TrimRight(tt.want.Endpoints[i].Responses[j].Body, "\n")
-					}
+					tt.want.Endpoints[i].Response.Body = bytes.TrimRight(tt.want.Endpoints[i].Response.Body, "\n")
 				}
 
 				if diff := cmp.Diff(tt.want.Endpoints, r.Endpoints); diff != "" {
