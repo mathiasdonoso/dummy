@@ -1,0 +1,31 @@
+[
+    {
+        "chart_count": 1,
+        "creation_time": "2024-01-08T19:05:15.865Z",
+        "current_user_role_id": 2,
+        "current_user_role_ids": [
+            2
+        ],
+        "cve_allowlist": {
+            "creation_time": "0001-01-01T00:00:00.000Z",
+            "id": 221,
+            "items": [],
+            "project_id": 242,
+            "update_time": "0001-01-01T00:00:00.000Z"
+        },
+        "metadata": {
+            "auto_scan": "true",
+            "enable_content_trust": "false",
+            "prevent_vul": "false",
+            "public": "false",
+            "reuse_sys_cve_allowlist": "true",
+            "severity": "low"
+        },
+        "name": "monorepo",
+        "owner_id": 1,
+        "owner_name": "admin",
+        "project_id": 242,
+        "repo_count": 1,
+        "update_time": "2024-01-08T19:05:15.865Z"
+    }
+]
