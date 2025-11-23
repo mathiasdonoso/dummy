@@ -41,6 +41,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 			// 	},
 			// 	Headers:     map[string]string{},
 			// 	QueryParams: map[string]string{},
+			// 	Body:        "{\"username\": \"wrong\",\"password\": \"wrong\"}",
 			// },
 			{
 				Method: "GET",

@@ -1,11 +1,15 @@
 package server
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
+	"io"
 	"log/slog"
 	"net"
 	"net/http"
 	"os"
+	"slices"
 	"text/tabwriter"
 	"time"
 
@@ -114,27 +118,36 @@ func (s *server) buildMux(model model.ImportResult) *http.ServeMux {
 
 	seen := []string{}
 
-outer:
 	for _, e := range model.Endpoints {
 		endpoint := fmt.Sprintf("%s %s", e.Method, e.Path)
 
-		for _, s := range seen {
-			if s == endpoint {
-				continue outer
-			}
+		if !slices.Contains(seen, endpoint) {
+			seen = append(seen, endpoint)
 		}
-
-		seen = append(seen, endpoint)
 
 		mux.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
 			slog.Debug(fmt.Sprintf("configuring endpoint %s", endpoint))
 
-			res := e.Response
-			for k, v := range res.Headers {
-				w.Header().Set(k, v)
+			reqBody, err := io.ReadAll(r.Body)
+			if err != nil {
+				fmt.Printf("server: could not read request body: %s\n", err)
+				return
 			}
-			w.WriteHeader(res.StatusCode)
-			w.Write(res.Body)
+
+			bodyData, err := json.Marshal(e.Body)
+			if err != nil {
+				fmt.Printf("server: could not marshal endpoint's body: %s\n", err)
+				return
+			}
+
+			if bytes.Equal(reqBody, bodyData) {
+				res := e.Response
+				for k, v := range res.Headers {
+					w.Header().Set(k, v)
+				}
+				w.WriteHeader(res.StatusCode)
+				w.Write(res.Body)
+			}
 		})
 	}
 
