@@ -1,11 +1,15 @@
 package server
 
 import (
+	"encoding/json"
 	"fmt"
+	"io"
 	"log/slog"
 	"net"
 	"net/http"
+	"net/http/httptest"
 	"os"
+	"reflect"
 	"text/tabwriter"
 	"time"
 
@@ -74,14 +78,10 @@ func waitUntilListening(port int) error {
 }
 
 // For testing purposes
-func (s *server) Start(model model.ImportResult) error {
+func (s *server) StartTest(model model.ImportResult) *httptest.Server {
 	mux := s.buildMux(model)
-
-	go func() {
-		_ = http.ListenAndServe(fmt.Sprintf(":%d", s.Port), mux)
-	}()
-
-	return waitUntilListening(s.Port)
+	ts := httptest.NewServer(mux)
+	return ts
 }
 
 func (s *server) StartAndBlock(model model.ImportResult) error {
@@ -96,13 +96,15 @@ func printEndpoints(model model.ImportResult) {
 
 	fmt.Fprintln(w, "METHOD\tPATH\tSTATUS")
 	for _, e := range model.Endpoints {
-		fmt.Fprintf(
-			w,
-			"%s\t%s\t%d\n",
-			e.Method,
-			e.Path,
-			e.Response.StatusCode,
-		)
+		for _, r := range e.Responses {
+			fmt.Fprintf(
+				w,
+				"%s\t%s\t%d\n",
+				e.Method,
+				e.Path,
+				r.StatusCode,
+			)
+		}
 	}
 
 	w.Flush()
@@ -114,15 +116,31 @@ func (s *server) buildMux(model model.ImportResult) *http.ServeMux {
 
 	for _, e := range model.Endpoints {
 		endpoint := fmt.Sprintf("%s %s", e.Method, e.Path)
+
 		mux.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
 			slog.Debug(fmt.Sprintf("configuring endpoint %s", endpoint))
 
-			res := e.Response
-			for k, v := range res.Headers {
-				w.Header().Set(k, v)
+			reqBody, err := io.ReadAll(r.Body)
+			if err != nil {
+				fmt.Printf("server: could not read request body: %s\n", err)
+				return
 			}
-			w.WriteHeader(res.StatusCode)
-			w.Write(res.Body)
+
+			for _, res := range e.Responses {
+				var expected, got any
+
+				json.Unmarshal([]byte(res.RequestBody), &expected)
+				json.Unmarshal(reqBody, &got)
+
+				if reflect.DeepEqual(expected, got) {
+					for k, v := range res.Headers {
+						w.Header().Set(k, v)
+					}
+					w.WriteHeader(res.StatusCode)
+					w.Write(res.Body)
+					return
+				}
+			}
 		})
 	}
 

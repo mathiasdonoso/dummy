@@ -27,39 +27,44 @@ func Parse(data []byte) (*model.ImportResult, error) {
 
 	r.Endpoints = []model.Endpoint{}
 	for _, it := range p.Item {
+		// TODO: refactor the url parser
+		uf := strings.ReplaceAll(it.Request.Url.Raw, "{{", "")
+		uf = strings.ReplaceAll(uf, "}}", "")
+		u, err := url.Parse(uf)
+		if err != nil {
+			return &model.ImportResult{}, err
+		}
+		querySplit := strings.Split(u.RawQuery, "&")
+		query := make(map[string]string)
+		for _, q := range querySplit {
+			kv := strings.Split(q, "=")
+			if len(kv) == 2 {
+				query[kv[0]] = kv[1]
+			}
+		}
+
+		endpoint := model.Endpoint{
+			Method:      it.Request.Method,
+			Path:        u.Path,
+			Description: "",
+			Responses:   []model.MockResponse{},
+			Headers:     map[string]string{},
+			QueryParams: query,
+		}
+
 		for _, resp := range it.Response {
 			response := model.MockResponse{
-				StatusCode: resp.Code,
-				Body:       []byte(resp.Body),
-				Headers:    map[string]string{},
-				DelayMs:    0,
-			}
-
-			// TODO: refactor the url parser
-			uf := strings.ReplaceAll(resp.Originalrequest.Url.Raw, "{{", "")
-			uf = strings.ReplaceAll(uf, "}}", "")
-			u, err := url.Parse(uf)
-			if err != nil {
-				return &model.ImportResult{}, err
-			}
-			querySplit := strings.Split(u.RawQuery, "&")
-			query := make(map[string]string)
-			for _, q := range querySplit {
-				kv := strings.Split(q, "=")
-				if len(kv) == 2 {
-					query[kv[0]] = kv[1]
-				}
-			}
-
-			r.Endpoints = append(r.Endpoints, model.Endpoint{
-				Method:      resp.Originalrequest.Method,
-				Path:        u.Path,
-				Description: "",
-				Response:    response,
+				StatusCode:  resp.Code,
+				Body:        []byte(resp.Body),
 				Headers:     map[string]string{},
-				QueryParams: query,
-			})
+				DelayMs:     0,
+				RequestBody: resp.Originalrequest.Body.Raw,
+			}
+
+			endpoint.Responses = append(endpoint.Responses, response)
 		}
+
+		r.Endpoints = append(r.Endpoints, endpoint)
 	}
 
 	slog.Debug(fmt.Sprintf("parsing completed for %s, total of endpoints: %d", r.ServiceName, len(r.Endpoints)))

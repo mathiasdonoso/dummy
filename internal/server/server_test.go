@@ -1,7 +1,7 @@
 package server
 
 import (
-	"fmt"
+	"bytes"
 	"io"
 	"net/http"
 	"testing"
@@ -12,18 +12,41 @@ import (
 )
 
 func TestLocalServerEndpoints(t *testing.T) {
-	harborResult := model.ImportResult{
-		ServiceName: "harbor api",
+	apiResults := model.ImportResult{
+		ServiceName: "api",
 		Endpoints: []model.Endpoint{
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects",
-				Description: "",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "test_data/harbor_response_projects.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Method: "POST",
+				Path:   "/api/auth",
+				Responses: []model.MockResponse{
+					{
+						StatusCode:  200,
+						Body:        testutils.MustReadFile(t, "test_data/auth-200.json"),
+						Headers:     map[string]string{},
+						DelayMs:     0,
+						RequestBody: "{\"username\": \"username\",\"password\": \"password\"}",
+					},
+					{
+						StatusCode:  400,
+						Body:        testutils.MustReadFile(t, "test_data/auth-400.json"),
+						Headers:     map[string]string{},
+						DelayMs:     0,
+						RequestBody: "{\"username\": \"wrong\",\"password\": \"wrong\"}",
+					},
+				},
+				Headers:     map[string]string{},
+				QueryParams: map[string]string{},
+			},
+			{
+				Method: "GET",
+				Path:   "/api/v2.0/projects",
+				Responses: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "test_data/harbor_response_projects.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -32,14 +55,15 @@ func TestLocalServerEndpoints(t *testing.T) {
 				},
 			},
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects/someproject/repositories",
-				Description: "",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "test_data/harbor_response_repositories.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Method: "GET",
+				Path:   "/api/v2.0/projects/someproject/repositories",
+				Responses: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "test_data/harbor_response_repositories.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -48,14 +72,15 @@ func TestLocalServerEndpoints(t *testing.T) {
 				},
 			},
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
-				Description: "",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Method: "GET",
+				Path:   "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
+				Responses: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -71,44 +96,43 @@ func TestLocalServerEndpoints(t *testing.T) {
 		model   model.ImportResult
 		wantErr bool
 	}{
-		{"harbor api", harborResult, false},
+		{"api", apiResults, false},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			s := NewServer()
-			err := s.Start(tt.model)
-
-			if tt.wantErr && err == nil {
-				t.Errorf("expected error but got nil")
-			}
-
-			if !tt.wantErr && err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
+			ts := s.StartTest(tt.model)
+			defer ts.Close()
 
 			for _, e := range tt.model.Endpoints {
-				req, err := http.NewRequest(e.Method, fmt.Sprintf("%s:%d%s", "http://localhost", s.Port, e.Path), nil)
-				if err != nil {
-					t.Errorf("unexpected error: %v", err)
-				}
+				for _, r := range e.Responses {
+					jsonData := []byte(r.RequestBody)
 
-				res, err := http.DefaultClient.Do(req)
-				if err != nil {
-					t.Errorf("unexpected error: %v", err)
-				}
+					url := ts.URL + e.Path
+					req, err := http.NewRequest(e.Method, url, bytes.NewBuffer(jsonData))
+					if err != nil {
+						t.Errorf("unexpected error: %v", err)
+					}
 
-				if res.StatusCode != e.Response.StatusCode {
-					t.Errorf("unexpected status code %d, wanted %d", res.StatusCode, e.Response.StatusCode)
-				}
+					res, err := http.DefaultClient.Do(req)
+					if err != nil {
+						t.Errorf("unexpected error: %v", err)
+					}
+					defer res.Body.Close()
 
-				responseBody, err := io.ReadAll(res.Body)
-				if err != nil {
-					t.Errorf("unexpected error: %v", err)
-				}
+					if res.StatusCode != r.StatusCode {
+						t.Errorf("unexpected status code %d, wanted %d", res.StatusCode, r.StatusCode)
+					}
 
-				if diff := cmp.Diff(string(responseBody), string(e.Response.Body)); diff != "" {
-					t.Errorf("output mismatch (-want +got):\n%s", diff)
+					responseBody, err := io.ReadAll(res.Body)
+					if err != nil {
+						t.Errorf("unexpected error: %v", err)
+					}
+
+					if diff := cmp.Diff(string(r.Body), string(responseBody)); diff != "" {
+						t.Errorf("output mismatch (-want +got):\n%s", diff)
+					}
 				}
 			}
 		})
