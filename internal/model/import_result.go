@@ -6,18 +6,19 @@ type ImportResult struct {
 }
 
 type Endpoint struct {
-	Method      string
-	Path        string
-	Body        string
+	Method string
+	Path   string
+	// Body        string
 	Description string
-	Response    MockResponse
+	Response    []MockResponse
 	Headers     map[string]string
 	QueryParams map[string]string
 }
 
 type MockResponse struct {
-	StatusCode int
-	Body       []byte
-	Headers    map[string]string
-	DelayMs    int
+	RequestBody string
+	StatusCode  int
+	Body        []byte
+	Headers     map[string]string
+	DelayMs     int
 }

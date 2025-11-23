@@ -20,37 +20,35 @@ func TestLocalServerEndpoints(t *testing.T) {
 			{
 				Method: "POST",
 				Path:   "/api/auth",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "test_data/auth-200.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode:  200,
+						Body:        testutils.MustReadFile(t, "test_data/auth-200.json"),
+						Headers:     map[string]string{},
+						DelayMs:     0,
+						RequestBody: "{\"username\": \"username\",\"password\": \"password\"}",
+					},
+					// {
+					// 	StatusCode:  400,
+					// 	Body:        testutils.MustReadFile(t, "test_data/auth-400.json"),
+					// 	Headers:     map[string]string{},
+					// 	DelayMs:     0,
+					// 	RequestBody: "{\"username\": \"wrong\",\"password\": \"wrong\"}",
+					// },
 				},
 				Headers:     map[string]string{},
 				QueryParams: map[string]string{},
-				Body:        "{\"username\": \"username\",\"password\": \"password\"}",
 			},
-			// {
-			// 	Method: "POST",
-			// 	Path:   "/api/auth",
-			// 	Response: model.MockResponse{
-			// 		StatusCode: 400,
-			// 		Body:       testutils.MustReadFile(t, "test_data/auth-400.json"),
-			// 		Headers:    map[string]string{},
-			// 		DelayMs:    0,
-			// 	},
-			// 	Headers:     map[string]string{},
-			// 	QueryParams: map[string]string{},
-			// 	Body:        "{\"username\": \"wrong\",\"password\": \"wrong\"}",
-			// },
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "test_data/harbor_response_projects.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "test_data/harbor_response_projects.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -61,11 +59,13 @@ func TestLocalServerEndpoints(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects/someproject/repositories",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "test_data/harbor_response_repositories.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "test_data/harbor_response_repositories.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -76,11 +76,14 @@ func TestLocalServerEndpoints(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode:  200,
+						Body:        testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
+						Headers:     map[string]string{},
+						DelayMs:     0,
+						RequestBody: "",
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -113,32 +116,34 @@ func TestLocalServerEndpoints(t *testing.T) {
 			}
 
 			for _, e := range tt.model.Endpoints {
-				jsonData, err := json.Marshal(e.Body)
-				if err != nil {
-					t.Errorf("unexpected error: %v", err)
-				}
+				for _, r := range e.Response {
+					jsonData, err := json.Marshal(r.Body)
+					if err != nil {
+						t.Errorf("unexpected error: %v", err)
+					}
 
-				req, err := http.NewRequest(e.Method, fmt.Sprintf("%s:%d%s", "http://localhost", s.Port, e.Path), bytes.NewBuffer(jsonData))
-				if err != nil {
-					t.Errorf("unexpected error: %v", err)
-				}
+					req, err := http.NewRequest(e.Method, fmt.Sprintf("%s:%d%s", "http://localhost", s.Port, e.Path), bytes.NewBuffer(jsonData))
+					if err != nil {
+						t.Errorf("unexpected error: %v", err)
+					}
 
-				res, err := http.DefaultClient.Do(req)
-				if err != nil {
-					t.Errorf("unexpected error: %v", err)
-				}
+					res, err := http.DefaultClient.Do(req)
+					if err != nil {
+						t.Errorf("unexpected error: %v", err)
+					}
 
-				if res.StatusCode != e.Response.StatusCode {
-					t.Errorf("unexpected status code %d, wanted %d", res.StatusCode, e.Response.StatusCode)
-				}
+					if res.StatusCode != r.StatusCode {
+						t.Errorf("unexpected status code %d, wanted %d", res.StatusCode, r.StatusCode)
+					}
 
-				responseBody, err := io.ReadAll(res.Body)
-				if err != nil {
-					t.Errorf("unexpected error: %v", err)
-				}
+					responseBody, err := io.ReadAll(res.Body)
+					if err != nil {
+						t.Errorf("unexpected error: %v", err)
+					}
 
-				if diff := cmp.Diff(string(responseBody), string(e.Response.Body)); diff != "" {
-					t.Errorf("output mismatch (-want +got):\n%s", diff)
+					if diff := cmp.Diff(string(responseBody), string(r.Body)); diff != "" {
+						t.Errorf("output mismatch (-want +got):\n%s", diff)
+					}
 				}
 			}
 		})

@@ -16,23 +16,21 @@ func TestParsingPostmanCollection(t *testing.T) {
 			{
 				Method: "POST",
 				Path:   "/api/auth",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "./test_data/portainer_api/responses/auth-200.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
-				},
-				Headers:     map[string]string{},
-				QueryParams: map[string]string{},
-			},
-			{
-				Method: "POST",
-				Path:   "/api/auth",
-				Response: model.MockResponse{
-					StatusCode: 400,
-					Body:       testutils.MustReadFile(t, "./test_data/portainer_api/responses/auth-400.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode:  200,
+						Body:        testutils.MustReadFile(t, "./test_data/portainer_api/responses/auth-200.json"),
+						Headers:     map[string]string{},
+						RequestBody: "{\n    \"username\": \"username\",\n    \"password\": \"password\"\n}",
+						DelayMs:     0,
+					},
+					{
+						StatusCode:  400,
+						Body:        testutils.MustReadFile(t, "./test_data/portainer_api/responses/auth-400.json"),
+						RequestBody: "{\n    \"username\": \"wrong\",\n    \"password\": \"wrong\"\n}",
+						Headers:     map[string]string{},
+						DelayMs:     0,
+					},
 				},
 				Headers:     map[string]string{},
 				QueryParams: map[string]string{},
@@ -46,11 +44,13 @@ func TestParsingPostmanCollection(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/projects-200.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/projects-200.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -61,11 +61,13 @@ func TestParsingPostmanCollection(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects/someproject/repositories",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/repositories-200.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/repositories-200.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -76,11 +78,13 @@ func TestParsingPostmanCollection(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
-				Response: model.MockResponse{
-					StatusCode: 200,
-					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/artifacts-200.json"),
-					Headers:    map[string]string{},
-					DelayMs:    0,
+				Response: []model.MockResponse{
+					{
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/artifacts-200.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
+					},
 				},
 				Headers: map[string]string{},
 				QueryParams: map[string]string{
@@ -126,8 +130,11 @@ func TestParsingPostmanCollection(t *testing.T) {
 				// Strip trailing newline introduced by POSIX text-file semantics.
 				// Editors routinely append a final '\n' even when it's not visible,
 				// but Postman response bodies don't include it—so we normalize here.
-				for i := range tt.want.Endpoints {
-					tt.want.Endpoints[i].Response.Body = bytes.TrimRight(tt.want.Endpoints[i].Response.Body, "\n")
+				for i, e := range tt.want.Endpoints {
+					// TODO: refactor, not sure I need the indexes
+					for j := range e.Response {
+						tt.want.Endpoints[i].Response[j].Body = bytes.TrimRight(tt.want.Endpoints[i].Response[j].Body, "\n")
+					}
 				}
 
 				if diff := cmp.Diff(tt.want.Endpoints, r.Endpoints); diff != "" {

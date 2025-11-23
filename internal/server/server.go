@@ -105,7 +105,9 @@ func printEndpoints(model model.ImportResult) {
 			"%s\t%s\t%d\n",
 			e.Method,
 			e.Path,
-			e.Response.StatusCode,
+			// TODO: Fix
+			200,
+			// e.Response.StatusCode,
 		)
 	}
 
@@ -134,14 +136,14 @@ func (s *server) buildMux(model model.ImportResult) *http.ServeMux {
 				return
 			}
 
-			bodyData, err := json.Marshal(e.Body)
+			bodyData, err := json.Marshal(e.Response[0].Body)
 			if err != nil {
 				fmt.Printf("server: could not marshal endpoint's body: %s\n", err)
 				return
 			}
 
 			if bytes.Equal(reqBody, bodyData) {
-				res := e.Response
+				res := e.Response[0]
 				for k, v := range res.Headers {
 					w.Header().Set(k, v)
 				}

@@ -5,10 +5,25 @@ type Query struct {
 	Value string `json:"value"`
 }
 
+type Raw struct {
+	Language string `json:"language"`
+}
+
+type Options struct {
+	Raw Raw `json:"raw"`
+}
+
+type Body struct {
+	Mode    string  `json:"mode"`
+	Raw     string  `json:"raw"`
+	Options Options `json:"options"`
+}
+
 type Originalrequest struct {
 	Method string `json:"method"`
 	Header []any  `json:"header"`
 	Url    Url    `json:"url"`
+	Body   Body   `json:"body"`
 }
 
 type Header struct {
