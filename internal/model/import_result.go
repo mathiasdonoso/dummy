@@ -8,6 +8,7 @@ type ImportResult struct {
 type Endpoint struct {
 	Method      string
 	Path        string
+	Body        string
 	Description string
 	Response    MockResponse
 	Headers     map[string]string

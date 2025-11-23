@@ -14,12 +14,23 @@ func TestParsingPostmanCollection(t *testing.T) {
 		ServiceName: "portainer api",
 		Endpoints: []model.Endpoint{
 			{
-				Method:      "POST",
-				Path:        "/api/auth",
-				Description: "",
+				Method: "POST",
+				Path:   "/api/auth",
 				Response: model.MockResponse{
 					StatusCode: 200,
 					Body:       testutils.MustReadFile(t, "./test_data/portainer_api/responses/auth-200.json"),
+					Headers:    map[string]string{},
+					DelayMs:    0,
+				},
+				Headers:     map[string]string{},
+				QueryParams: map[string]string{},
+			},
+			{
+				Method: "POST",
+				Path:   "/api/auth",
+				Response: model.MockResponse{
+					StatusCode: 400,
+					Body:       testutils.MustReadFile(t, "./test_data/portainer_api/responses/auth-400.json"),
 					Headers:    map[string]string{},
 					DelayMs:    0,
 				},
@@ -33,9 +44,8 @@ func TestParsingPostmanCollection(t *testing.T) {
 		ServiceName: "harbor api",
 		Endpoints: []model.Endpoint{
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects",
-				Description: "",
+				Method: "GET",
+				Path:   "/api/v2.0/projects",
 				Response: model.MockResponse{
 					StatusCode: 200,
 					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/projects-200.json"),
@@ -49,9 +59,8 @@ func TestParsingPostmanCollection(t *testing.T) {
 				},
 			},
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects/someproject/repositories",
-				Description: "",
+				Method: "GET",
+				Path:   "/api/v2.0/projects/someproject/repositories",
 				Response: model.MockResponse{
 					StatusCode: 200,
 					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/repositories-200.json"),
@@ -65,9 +74,8 @@ func TestParsingPostmanCollection(t *testing.T) {
 				},
 			},
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
-				Description: "",
+				Method: "GET",
+				Path:   "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
 				Response: model.MockResponse{
 					StatusCode: 200,
 					Body:       testutils.MustReadFile(t, "./test_data/harbor_api/responses/artifacts-200.json"),

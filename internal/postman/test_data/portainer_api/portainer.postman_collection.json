@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "d71fa4b0-0ec6-4cfa-bda3-4fe8ef65b4e3",
-		"name": "portainer api",
+		"name": "api",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "25362608"
 	},
@@ -16,7 +16,7 @@
 							"let responseData = pm.response.json();",
 							"",
 							"if (responseData.jwt) {",
-							"    pm.collectionVariables.set(\"portainerAuthToken\", responseData.jwt);",
+							"    pm.collectionVariables.set(\"token\", responseData.jwt);",
 							"}"
 						],
 						"type": "text/javascript",
@@ -35,7 +35,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\": \"{{portainerUsername}}\",\n    \"password\": \"{{pportainerPassword}}\"\n}",
+					"raw": "{\n    \"username\": \"username\",\n    \"password\": \"password\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -43,10 +43,10 @@
 					}
 				},
 				"url": {
-					"raw": "https://{{portainerUrl}}/api/auth",
+					"raw": "https://{{url}}/api/auth",
 					"protocol": "https",
 					"host": [
-						"{{portainerUrl}}"
+						"{{url}}"
 					],
 					"path": [
 						"api",
@@ -67,7 +67,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"{{portainerUsername}}\",\n    \"password\": \"{{pportainerPassword}}\"\n}",
+							"raw": "{\n    \"username\": \"username\",\n    \"password\": \"password\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -75,10 +75,10 @@
 							}
 						},
 						"url": {
-							"raw": "https://{{portainerUrl}}/api/auth",
+							"raw": "https://{{url}}/api/auth",
 							"protocol": "https",
 							"host": [
-								"{{portainerUrl}}"
+								"{{url}}"
 							],
 							"path": [
 								"api",
@@ -143,28 +143,74 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"jwt\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWUsImlhdCI6MTUxNjIzOTAyMn0.KMUFsIDTnFmyG3nMiGM6H9FNFUROf3wh7SmqJp-QV30\"\n}"
+				},
+				{
+					"name": "400 ERROR",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"wrong\",\n    \"password\": \"wrong\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://{{url}}/api/auth",
+							"protocol": "https",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"auth"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"name": "Content-Type",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"err\": \"Invalid credentials\"\n}"
 				}
 			]
 		}
 	],
 	"variable": [
 		{
-			"key": "portainerUrl",
+			"key": "url",
 			"value": "",
 			"type": "default"
 		},
 		{
-			"key": "portainerUsername",
+			"key": "username",
 			"value": "",
 			"type": "default"
 		},
 		{
-			"key": "pportainerPassword",
+			"key": "password",
 			"value": "",
 			"type": "default"
 		},
 		{
-			"key": "portainerAuthToken",
+			"key": "token",
 			"value": "",
 			"type": "default"
 		}

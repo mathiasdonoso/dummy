@@ -1,6 +1,8 @@
 package server
 
 import (
+	"bytes"
+	"encoding/json"
 	"fmt"
 	"io"
 	"net/http"
@@ -12,13 +14,37 @@ import (
 )
 
 func TestLocalServerEndpoints(t *testing.T) {
-	harborResult := model.ImportResult{
-		ServiceName: "harbor api",
+	apiResults := model.ImportResult{
+		ServiceName: "api",
 		Endpoints: []model.Endpoint{
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects",
-				Description: "",
+				Method: "POST",
+				Path:   "/api/auth",
+				Response: model.MockResponse{
+					StatusCode: 200,
+					Body:       testutils.MustReadFile(t, "test_data/auth-200.json"),
+					Headers:    map[string]string{},
+					DelayMs:    0,
+				},
+				Headers:     map[string]string{},
+				QueryParams: map[string]string{},
+				Body:        "{\"username\": \"username\",\"password\": \"password\"}",
+			},
+			// {
+			// 	Method: "POST",
+			// 	Path:   "/api/auth",
+			// 	Response: model.MockResponse{
+			// 		StatusCode: 400,
+			// 		Body:       testutils.MustReadFile(t, "test_data/auth-400.json"),
+			// 		Headers:    map[string]string{},
+			// 		DelayMs:    0,
+			// 	},
+			// 	Headers:     map[string]string{},
+			// 	QueryParams: map[string]string{},
+			// },
+			{
+				Method: "GET",
+				Path:   "/api/v2.0/projects",
 				Response: model.MockResponse{
 					StatusCode: 200,
 					Body:       testutils.MustReadFile(t, "test_data/harbor_response_projects.json"),
@@ -32,9 +58,8 @@ func TestLocalServerEndpoints(t *testing.T) {
 				},
 			},
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects/someproject/repositories",
-				Description: "",
+				Method: "GET",
+				Path:   "/api/v2.0/projects/someproject/repositories",
 				Response: model.MockResponse{
 					StatusCode: 200,
 					Body:       testutils.MustReadFile(t, "test_data/harbor_response_repositories.json"),
@@ -48,9 +73,8 @@ func TestLocalServerEndpoints(t *testing.T) {
 				},
 			},
 			{
-				Method:      "GET",
-				Path:        "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
-				Description: "",
+				Method: "GET",
+				Path:   "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
 				Response: model.MockResponse{
 					StatusCode: 200,
 					Body:       testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
@@ -71,7 +95,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 		model   model.ImportResult
 		wantErr bool
 	}{
-		{"harbor api", harborResult, false},
+		{"api", apiResults, false},
 	}
 
 	for _, tt := range tests {
@@ -88,7 +112,12 @@ func TestLocalServerEndpoints(t *testing.T) {
 			}
 
 			for _, e := range tt.model.Endpoints {
-				req, err := http.NewRequest(e.Method, fmt.Sprintf("%s:%d%s", "http://localhost", s.Port, e.Path), nil)
+				jsonData, err := json.Marshal(e.Body)
+				if err != nil {
+					t.Errorf("unexpected error: %v", err)
+				}
+
+				req, err := http.NewRequest(e.Method, fmt.Sprintf("%s:%d%s", "http://localhost", s.Port, e.Path), bytes.NewBuffer(jsonData))
 				if err != nil {
 					t.Errorf("unexpected error: %v", err)
 				}

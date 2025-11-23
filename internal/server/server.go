@@ -112,8 +112,20 @@ func printEndpoints(model model.ImportResult) {
 func (s *server) buildMux(model model.ImportResult) *http.ServeMux {
 	mux := http.NewServeMux()
 
+	seen := []string{}
+
+outer:
 	for _, e := range model.Endpoints {
 		endpoint := fmt.Sprintf("%s %s", e.Method, e.Path)
+
+		for _, s := range seen {
+			if s == endpoint {
+				continue outer
+			}
+		}
+
+		seen = append(seen, endpoint)
+
 		mux.HandleFunc(endpoint, func(w http.ResponseWriter, r *http.Request) {
 			slog.Debug(fmt.Sprintf("configuring endpoint %s", endpoint))
 
