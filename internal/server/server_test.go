@@ -2,8 +2,6 @@ package server
 
 import (
 	"bytes"
-	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 	"testing"
@@ -28,13 +26,13 @@ func TestLocalServerEndpoints(t *testing.T) {
 						DelayMs:     0,
 						RequestBody: "{\"username\": \"username\",\"password\": \"password\"}",
 					},
-					// {
-					// 	StatusCode:  400,
-					// 	Body:        testutils.MustReadFile(t, "test_data/auth-400.json"),
-					// 	Headers:     map[string]string{},
-					// 	DelayMs:     0,
-					// 	RequestBody: "{\"username\": \"wrong\",\"password\": \"wrong\"}",
-					// },
+					{
+						StatusCode:  400,
+						Body:        testutils.MustReadFile(t, "test_data/auth-400.json"),
+						Headers:     map[string]string{},
+						DelayMs:     0,
+						RequestBody: "{\"username\": \"wrong\",\"password\": \"wrong\"}",
+					},
 				},
 				Headers:     map[string]string{},
 				QueryParams: map[string]string{},
@@ -78,11 +76,10 @@ func TestLocalServerEndpoints(t *testing.T) {
 				Path:   "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
 				Responses: []model.MockResponse{
 					{
-						StatusCode:  200,
-						Body:        testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
-						Headers:     map[string]string{},
-						DelayMs:     0,
-						RequestBody: "",
+						StatusCode: 200,
+						Body:       testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
+						Headers:    map[string]string{},
+						DelayMs:    0,
 					},
 				},
 				Headers: map[string]string{},
@@ -105,24 +102,15 @@ func TestLocalServerEndpoints(t *testing.T) {
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			s := NewServer()
-			err := s.Start(tt.model)
-
-			if tt.wantErr && err == nil {
-				t.Errorf("expected error but got nil")
-			}
-
-			if !tt.wantErr && err != nil {
-				t.Errorf("unexpected error: %v", err)
-			}
+			ts := s.StartTest(tt.model)
+			defer ts.Close()
 
 			for _, e := range tt.model.Endpoints {
 				for _, r := range e.Responses {
-					jsonData, err := json.Marshal(r.Body)
-					if err != nil {
-						t.Errorf("unexpected error: %v", err)
-					}
+					jsonData := []byte(r.RequestBody)
 
-					req, err := http.NewRequest(e.Method, fmt.Sprintf("%s:%d%s", "http://localhost", s.Port, e.Path), bytes.NewBuffer(jsonData))
+					url := ts.URL + e.Path
+					req, err := http.NewRequest(e.Method, url, bytes.NewBuffer(jsonData))
 					if err != nil {
 						t.Errorf("unexpected error: %v", err)
 					}
@@ -131,6 +119,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 					if err != nil {
 						t.Errorf("unexpected error: %v", err)
 					}
+					defer res.Body.Close()
 
 					if res.StatusCode != r.StatusCode {
 						t.Errorf("unexpected status code %d, wanted %d", res.StatusCode, r.StatusCode)
@@ -141,7 +130,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 						t.Errorf("unexpected error: %v", err)
 					}
 
-					if diff := cmp.Diff(string(responseBody), string(r.Body)); diff != "" {
+					if diff := cmp.Diff(string(r.Body), string(responseBody)); diff != "" {
 						t.Errorf("output mismatch (-want +got):\n%s", diff)
 					}
 				}
