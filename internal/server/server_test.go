@@ -20,7 +20,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 			{
 				Method: "POST",
 				Path:   "/api/auth",
-				Response: []model.MockResponse{
+				Responses: []model.MockResponse{
 					{
 						StatusCode:  200,
 						Body:        testutils.MustReadFile(t, "test_data/auth-200.json"),
@@ -42,7 +42,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects",
-				Response: []model.MockResponse{
+				Responses: []model.MockResponse{
 					{
 						StatusCode: 200,
 						Body:       testutils.MustReadFile(t, "test_data/harbor_response_projects.json"),
@@ -59,7 +59,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects/someproject/repositories",
-				Response: []model.MockResponse{
+				Responses: []model.MockResponse{
 					{
 						StatusCode: 200,
 						Body:       testutils.MustReadFile(t, "test_data/harbor_response_repositories.json"),
@@ -76,7 +76,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 			{
 				Method: "GET",
 				Path:   "/api/v2.0/projects/someproject/repositories/somerepository/artifacts",
-				Response: []model.MockResponse{
+				Responses: []model.MockResponse{
 					{
 						StatusCode:  200,
 						Body:        testutils.MustReadFile(t, "test_data/harbor_response_artifacts.json"),
@@ -116,7 +116,7 @@ func TestLocalServerEndpoints(t *testing.T) {
 			}
 
 			for _, e := range tt.model.Endpoints {
-				for _, r := range e.Response {
+				for _, r := range e.Responses {
 					jsonData, err := json.Marshal(r.Body)
 					if err != nil {
 						t.Errorf("unexpected error: %v", err)

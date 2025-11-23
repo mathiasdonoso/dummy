@@ -47,7 +47,7 @@ func Parse(data []byte) (*model.ImportResult, error) {
 			Method:      it.Request.Method,
 			Path:        u.Path,
 			Description: "",
-			Response:    []model.MockResponse{},
+			Responses:   []model.MockResponse{},
 			Headers:     map[string]string{},
 			QueryParams: query,
 		}
@@ -61,7 +61,7 @@ func Parse(data []byte) (*model.ImportResult, error) {
 				RequestBody: resp.Originalrequest.Body.Raw,
 			}
 
-			endpoint.Response = append(endpoint.Response, response)
+			endpoint.Responses = append(endpoint.Responses, response)
 		}
 
 		r.Endpoints = append(r.Endpoints, endpoint)
